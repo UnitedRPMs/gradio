@@ -1,10 +1,10 @@
-%global     commit     17b9e8bcb5fcbbd9863fd610f3e4109093017494
+%global     commit     c5946f69ee2b1a5943ae5f4c78e413f81508be3d
 %global     githash    %(c=%{commit}; echo ${c:0:7})
-%global     gitdate    20160801
+%global     gitdate    20160906
 
 Name:       gradio
 Version:    4.0.1
-Release:    2.%{gitdate}git%{githash}%{?dist}
+Release:    3.%{gitdate}git%{githash}%{?dist}
 Summary:    Internet radio app for Gnome users
 
 Group:      Applications/Internet
@@ -21,10 +21,17 @@ BuildRequires:  pkgconfig(gee-0.8)
 BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(libsoup-2.4)
+BuildRequires:  pkgconfig(libnotify)
+BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
+BuildRequires:  pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:  intltool desktop-file-utils libappstream-glib
 
 Requires:       dconf
-
+Requires:       gstreamer1-plugins-base-tools
+Requires:       gstreamer1-plugins-base
+Requires:	gstreamer1-libav
+Requires:	gstreamer1-plugins-ugly
+Requires:	gstreamer1-plugins-bad-freeworld
 
 %description
 A GTK3 app for finding and listening to internet radio stations.
@@ -68,5 +75,9 @@ fi
 %{_datadir}/%{name}/style/style.css
 
 %changelog
+* Tue Sep 06 2016 Pavlo Rudyi <paulcarroty at riseup> -  4.0.1-3
+- Update to the latest git snapshot
+
 * Fri Aug 05 2016 Pavlo Rudyi <paulcarroty at riseup> -  4.0.1-2
 - Update to the latest git snapshot 
+
