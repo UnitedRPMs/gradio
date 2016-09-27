@@ -1,11 +1,11 @@
-%global     commit     c5946f69ee2b1a5943ae5f4c78e413f81508be3d
+%global     commit     cb77d09be9e133f8179d36da0355b707ae3f9af8
 %global     githash    %(c=%{commit}; echo ${c:0:7})
-%global     gitdate    20160906
+%global     gitdate    20160927
 
 Name:       gradio
-Version:    4.0.1
-Release:    3.%{gitdate}git%{githash}%{?dist}
-Summary:    Internet radio app for Gnome users
+Version:    5.0.0
+Release:    1.%{gitdate}git%{githash}%{?dist}
+Summary:    Internet radio app for GNOME users
 
 Group:      Applications/Internet
 License:    GPLv3
@@ -22,6 +22,7 @@ BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libnotify)
+BuildRequires:  pkgconfig(webkit2gtk-4.0)
 BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
 BuildRequires:  pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:  intltool desktop-file-utils libappstream-glib
@@ -45,7 +46,7 @@ make %{?_smp_mflags}
 
 %install
 %make_install
-desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/de.haeckerfelix.%{name}.desktop
 %find_lang %{name}
 
 %clean
@@ -70,12 +71,15 @@ fi
 %{_bindir}/%{name}
 %{_datadir}/glib-2.0/schemas/*
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/de.haeckerfelix.%{name}.desktop
 %{_datadir}/pixmaps/%{name}.svg
 %{_datadir}/%{name}/style/style.css
 
 %changelog
-* Tue Sep 06 2016 Pavlo Rudyi <paulcarroty at riseup> -  4.0.1-3
+* Tue Sep 27 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-1
+- Update to the latest 5.0.0 beta 1 
+
+* Tue Sep 06 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  4.0.1-3
 - Update to the latest git snapshot
 
 * Fri Aug 05 2016 Pavlo Rudyi <paulcarroty at riseup> -  4.0.1-2
