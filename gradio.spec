@@ -1,10 +1,10 @@
-%global     commit     a0bc74f94a201b5eb2c81cf48fc35375544b8197
+%global     commit     8b44995d76b7e1e0c175bc88a64e3b01aaf6a967
 %global     githash    %(c=%{commit}; echo ${c:0:7})
-%global     gitdate    20161007
+%global     gitdate    20161211
 
 Name:       gradio
 Version:    5.0.0
-Release:    2.%{gitdate}git%{githash}%{?dist}
+Release:    3.%{gitdate}git%{githash}%{?dist}
 Summary:    Internet radio app for GNOME users
 
 Group:      Applications/Internet
@@ -26,7 +26,7 @@ BuildRequires:  pkgconfig(libnotify)
 BuildRequires:  pkgconfig(webkit2gtk-4.0)
 BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
 BuildRequires:  pkgconfig(gstreamer-plugins-base-1.0)
-BuildRequires:  intltool desktop-file-utils libappstream-glib
+BuildRequires:  intltool desktop-file-utils libappstream-glib-devel
 BuildRequires:  libappstream-glib-builder-devel
 BuildRequires:  pkgconfig(x11)
 
@@ -51,7 +51,7 @@ make %{?_smp_mflags}
 
 %install
 %make_install
-desktop-file-validate %{buildroot}%{_datadir}/applications/de.haeckerfelix.%{name}.desktop
+desktop-file-install --add-category=GTK %{buildroot}%{_datadir}/applications/de.haeckerfelix.%{name}.desktop
 
 %clean
 rm -rf %{buildroot}
@@ -79,19 +79,21 @@ fi
 %{_datadir}/applications/de.haeckerfelix.%{name}.desktop
 %{_datadir}/%{name}/%{name}.css
 %{_datadir}/icons/hicolor/*/apps/de.haeckerfelix.gradio.*
-%{_datadir}/icons/hicolor/scalable/apps/de.haeckerfelix.gradio-symbolic.svg
+%{_datadir}/icons/hicolor/scalable/*
+%{_datadir}/icons/hicolor/symbolic/apps/de.haeckerfelix.gradio-symbolic.svg
 
 %changelog
+* Sun Dec 11 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-3
+- Update to the latest snapshot
 
 * Tue Nov 07 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-2
-- Update to 5.0.0b2 
+- Update to 5.0.0b2
 
 * Tue Sep 27 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-1
-- Update to the latest 5.0.0 beta 1 
+- Update to the latest 5.0.0 beta 1
 
 * Tue Sep 06 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  4.0.1-3
 - Update to the latest git snapshot
 
 * Fri Aug 05 2016 Pavlo Rudyi <paulcarroty at riseup> -  4.0.1-2
-- Update to the latest git snapshot 
-
+- Update to the latest git snapshot
