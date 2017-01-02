@@ -1,10 +1,10 @@
-%global     commit     8b44995d76b7e1e0c175bc88a64e3b01aaf6a967
+%global     commit     8cf28af8d19a483d444ba3c607fa991a8248f122
 %global     githash    %(c=%{commit}; echo ${c:0:7})
-%global     gitdate    20161211
+%global     gitdate    20161221
 
 Name:       gradio
 Version:    5.0.0
-Release:    3.%{gitdate}git%{githash}%{?dist}
+Release:    4.%{gitdate}git%{githash}%{?dist}
 Summary:    Internet radio app for GNOME users
 
 Group:      Applications/Internet
@@ -83,7 +83,7 @@ fi
 %{_datadir}/icons/hicolor/symbolic/apps/de.haeckerfelix.gradio-symbolic.svg
 
 %changelog
-* Sun Dec 11 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-3
+* Mon Jan 02 2017 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-4
 - Update to the latest snapshot
 
 * Tue Nov 07 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-2
