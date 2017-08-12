@@ -1,16 +1,17 @@
-%global     commit     d5767082123e66968da1cdd924023ce5fc602b1d
-%global     githash    %(c=%{commit}; echo ${c:0:7})
-%global     gitdate    20170809
+%global gitdate 20170809
+%global commit0 d5767082123e66968da1cdd924023ce5fc602b1d
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global gver .git%{shortcommit0}
 
 Name:       gradio
 Version:    5.9
-Release:    1.%{gitdate}%git%{githash}%{?dist}
+Release:    1%{?gver}%{?dist}
 Summary:    Internet radio app for Gnome users
 
 Group:      Applications/Internet
 License:    GPLv3
 URL:        https://github.com/haecker-felix/gradio
-Source:     https://github.com/haecker-felix/%{name}/archive/%{commit}/%{name}-v%{version}-%{githash}.tar.gz
+Source0:    https://github.com/haecker-felix/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires:  vala
 BuildRequires:  meson
@@ -40,8 +41,8 @@ Requires:       sqlite-libs
 %description
 A GTK3 app for finding and listening to internet radio stations.
 
-%prep -n
-%setup -q -n %{name}-%{commit}
+%prep 
+%autosetup -n %{name}-%{shortcommit0}
 
 %build
 mkdir build
