@@ -42,7 +42,7 @@ Requires:       sqlite-libs
 A GTK3 app for finding and listening to internet radio stations.
 
 %prep 
-%autosetup -n %{name}-%{shortcommit0}
+%autosetup -n %{name}-%{commit0}
 
 %build
 mkdir build
@@ -93,7 +93,7 @@ fi
 * Mon Jan 02 2017 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-4
 - Update to the latest snapshot
 
-* Tue Nov 07 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-2
+* Mon Nov 07 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-2
 - Update to 5.0.0b2
 
 * Tue Sep 27 2016 Pavlo Rudyi <paulcarroty at riseup.net> -  5.0.0-1
