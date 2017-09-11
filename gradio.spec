@@ -1,10 +1,9 @@
-%global gitdate 20170809
-%global commit0 d5767082123e66968da1cdd924023ce5fc602b1d
+%global commit0 3e8502a934dabd86b9a448ab3544c5d76d6c1ad1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:       gradio
-Version:    5.9
+Version:    6.0
 Release:    1%{?gver}%{?dist}
 Summary:    Internet radio app for Gnome users
 
@@ -86,6 +85,10 @@ fi
 %{_datadir}/locale/*/LC_MESSAGES/%{name}.*
 
 %changelog
+
+* Sun Sep 10 2017 Unitedrpms Project <unitedrpms AT protonmail DOT com> 6.0-1.git3e8502a
+- Updated to 6.0-1.git3e8502a 
+
 * Sat Aug 12 2017 Pavlo Rudyi <paulcarroty at riseup.net> -  5.9-1
 - Update to the latest snapshot
 - New UI and search engine
