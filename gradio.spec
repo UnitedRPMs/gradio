@@ -75,7 +75,7 @@ fi
 %{_bindir}/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %files
-%license LICENSE
+%license LICENSE.md
 %{_bindir}/%{name}
 %{_datadir}/glib-2.0/schemas/*
 %{_datadir}/applications/de.haeckerfelix.%{name}.desktop
