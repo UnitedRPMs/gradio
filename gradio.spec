@@ -41,7 +41,7 @@ Requires:       sqlite-libs
 A GTK3 app for finding and listening to internet radio stations.
 
 %prep 
-%autosetup -n %{name}-%{commit0}
+%autosetup -n Gradio-%{commit0}
 
 %build
 mkdir build
