@@ -1,9 +1,9 @@
-%global commit0 b3bb06ba0370f49987dbe52afcdf9c0e6ad06f1c
+%global commit0 4ccfdb028b54cbf488d0eb504c9fd6be69aaa1b5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:       gradio
-Version:    7.1
+Version:    7.2
 Release:    1%{?gver}%{?dist}
 Summary:    Internet radio app for Gnome users
 
@@ -87,6 +87,9 @@ fi
 %{_datadir}/gnome-shell/search-providers/de.haeckerfelix.gradio.search-provider.ini
 
 %changelog
+
+* Sun Nov 04 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 7.2-1.git4ccfdb0
+- Updated to 7.2-1.git4ccfdb0
 
 * Sun Jan 21 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 7.1-1.gitb3bb06b
 - Updated to 7.1-1.gitb3bb06b
