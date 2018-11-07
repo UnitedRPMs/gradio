@@ -4,7 +4,7 @@
 
 Name:       gradio
 Version:    7.2
-Release:    1%{?gver}%{?dist}
+Release:    2%{?gver}%{?dist}
 Summary:    Internet radio app for Gnome users
 
 Group:      Applications/Internet
@@ -91,7 +91,7 @@ fi
 %changelog
 
 * Sun Nov 04 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 7.2-1.git4ccfdb0
-- Updated to 7.2-1.git4ccfdb0
+- Updated to 7.2-2.git4ccfdb0
 
 * Sun Jan 21 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 7.1-1.gitb3bb06b
 - Updated to 7.1-1.gitb3bb06b
