@@ -36,6 +36,8 @@ Requires:       gstreamer1-plugins-base-tools
 Requires:       gstreamer1-plugins-base
 Requires:       libappstream-glib
 Requires:       sqlite-libs
+Requires:       gstreamer1-plugins-bad-nonfree
+Requires:       gstreamer1-libav
 
 %description
 A GTK3 app for finding and listening to internet radio stations.
