@@ -1,10 +1,10 @@
-%global commit0 4ccfdb028b54cbf488d0eb504c9fd6be69aaa1b5
+%global commit0 7f4e3eaa0b889be4b2023cda52af8e332b4903ca
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:       gradio
-Version:    7.2
-Release:    2%{?gver}%{?dist}
+Version:    7.3
+Release:    7%{?gver}%{?dist}
 Summary:    Internet radio app for Gnome users
 
 Group:      Applications/Internet
@@ -27,7 +27,8 @@ BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
 BuildRequires:  pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:  intltool desktop-file-utils
 BuildRequires:  libappstream-glib-devel
-BuildRequires:  libappstream-glib-builder-devel
+#BuildRequires:  libappstream-glib-builder-devel
+BuildRequires:	libappstream-glib-builder
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(sqlite3)
 
@@ -83,12 +84,16 @@ fi
 %{_datadir}/applications/de.haeckerfelix.%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/de.haeckerfelix.gradio.*
 %{_datadir}/icons/hicolor/symbolic/apps/de.haeckerfelix.gradio-symbolic.svg
-%{_datadir}/appdata/de.haeckerfelix.gradio.appdata.xml
+#{_datadir}/appdata/de.haeckerfelix.gradio.appdata.xml
+%{_datadir}/metainfo/de.haeckerfelix.gradio.appdata.xml
 %{_datadir}/locale/*/LC_MESSAGES/%{name}.*
 %{_datadir}/dbus-1/services/de.haeckerfelix.gradio.service
 %{_datadir}/gnome-shell/search-providers/de.haeckerfelix.gradio.search-provider.ini
 
 %changelog
+
+* Fri Sep 13 2019 Unitedrpms Project <unitedrpms AT protonmail DOT com> 7.3-7.git7f4e3ea
+- Updated to 7.3-7.git7f4e3ea
 
 * Sun Nov 04 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 7.2-1.git4ccfdb0
 - Updated to 7.2-2.git4ccfdb0
